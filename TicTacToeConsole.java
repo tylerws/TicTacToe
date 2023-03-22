@@ -1,30 +1,46 @@
 public class TicTacToeConsole {
-                                                                          
-//     88                                                              
-//     ,d    ""              ,d                            ,d                
-//     88                    88                            88                
-//   MM88MMM 88  ,adPPYba, MM88MMM ,adPPYYba,  ,adPPYba, MM88MMM ,adPPYba,   
-//     88    88 a8"     ""   88    ""     `Y8 a8"     ""   88   a8"     "8a  
-//     88    88 8b           88    ,adPPPPP88 8b           88   8b       d8  
-//     88,   88 "8a,   ,aa   88,   88,    ,88 "8a,   ,aa   88,  "8a,   ,a8"  
-//     "Y888 88  `"Ybbd8"'   "Y888 `"8bbdP"Y8  `"Ybbd8"'   "Y888 `"YbbdP"'   
-
-    public static void printTitle(){
-        System.out.println("  88                                                              ");
-        System.out.println("  ,d    \"\"              ,d                            ,d                ");
-        System.out.println("  88                    88                            88                ");
-        System.out.println("MM88MMM 88  ,adPPYba, MM88MMM ,adPPYYba,  ,adPPYba, MM88MMM ,adPPYba,   ");
-        System.out.println("  88    88 a8\"     \"\"   88    \"\"     `Y8 a8\"     \"\"   88   a8\"     \"8a  ");
-        System.out.println("  88    88 a8\"     \"\"   88    \"\"     `Y8 a8\"     \"\"   88   a8\"     \"8a  ");
-        System.out.println("  88,   88 \"8a,   ,aa   88,   88,    ,88 \"8a,   ,aa   88,  \"8a,   ,a8\"  ");
-        System.out.print("  \"Y888 88  `\"Ybbd8\"'   \"Y888 `\"8bbdP\"Y8  `\"Ybbd8\"'   \"Y888 `\"YbbdP\"'   ");
-        System.out.print("                                     e");
-    }
 
     TicTacToeConsole(){
 
     }
+
+    public static void printTitle(){
+        System.out.println(" _   _      _             _             ");
+        System.out.println("| | (_)    | |           | |            ");
+        System.out.println("| |_ _  ___| |_ __ _  ___| |_ ___   ___ ");
+        System.out.println("| __| |/ __| __/ _` |/ __| __/ _ \\ / _ \\");
+        System.out.println("| |_| | (__| || (_| | (__| || (_) |  __/");
+        System.out.println(" \\__|_|\\___|\\__\\__,_|\\___|\\__\\___/ \\___|");
+    }
+
+
+    public static String printY(){
+        return "   ____" + "\n" + " ,' __ `." + "\n" + "/ ,'  `. \\" + "\n" + "| | () | |" + "\n" + "\\ `.__,' /" + "\n" + " `.____,'";
+    }
+
+
+    public static String printX(){
+        return " .____, " + "\n" + ". \\  / ," + "\n" + "|`-  -'|" + "\n" + "|,-  -.|" + "\n" + "' /__\\ `" + "\n" + " '    ` ";
+    }
+
+    public static String printWinner(TicTacToeBoard.getGameStatus()){
+
+    }
+
     public static void main(String[] args) {
         printTitle();
+        System.out.println( printX());
+        System.out.println(printY());
     }
 }
+
+// ```
+//  ______________________________
+// < Available on Maven Central! >
+//  ------------------------------
+//         \   ^__^
+//          \  (oo)\_______
+//             (__)\       )\/\
+//                 ||----w |
+//                 ||     ||
+// ```
