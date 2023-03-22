@@ -27,7 +27,7 @@ public class TicTacToeBoard {
         return false;
         }
 
-        //1 = player1 win, 2 = player2 win, 0 = in progress, -1 = tie
+        //1 = player1 win, 2 = player2 win, 0 = in progress, -1
 
         public int getGameStatus() {
             if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1) {
@@ -62,6 +62,12 @@ public class TicTacToeBoard {
             return 2;
         } else if (board[2][0] == 2 && board[1][1] == 2 && board[0][2] == 2) {
             return 2;
-        } else if ()
+        } else if (board[0][0] == 0 || board[0][1] == 0 || board[0][2] == 0
+        || board[1][0] == 0 || board[1][1] == 0 || board[1][2] == 0
+        || board[2][0] == 0 || board[2][1] == 0 || board[2][2] == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }
