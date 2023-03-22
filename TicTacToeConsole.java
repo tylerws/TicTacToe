@@ -1,7 +1,8 @@
 public class TicTacToeConsole {
+    private TicTacToeBoard board;
 
-    TicTacToeConsole(){
-
+    TicTacToeConsole(TicTacToeBoard board){
+        this.board = board;
     }
 
     public static void printTitle(){
@@ -22,9 +23,17 @@ public class TicTacToeConsole {
     public static String printX(){
         return " .____, " + "\n" + ". \\  / ," + "\n" + "|`-  -'|" + "\n" + "|,-  -.|" + "\n" + "' /__\\ `" + "\n" + " '    ` ";
     }
-
-    public static String printWinner(TicTacToeBoard.getGameStatus()){
-
+        //1 = player1 win, 2 = player2 win, 0 = in progress, -1 = tie
+    public String printWinner(){
+        int status = board.getGameStatus();
+        if (status == 1){
+            return "PlayerOne wins";
+        } else if (status == 2){
+            return "PlayerTwo wins";
+        } else if (status == 0){
+            return "In progress ";
+        }
+        return "Tie";
     }
 
     public static void main(String[] args) {
