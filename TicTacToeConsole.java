@@ -41,6 +41,10 @@ public class TicTacToeConsole {
         return "Tie";
     }
 
+
+
+    
+
     public void printBoard(TicTacToeBoard board) {
         String sol = "";
         for (int r = 0; r < 3; r++) {
@@ -64,11 +68,11 @@ public class TicTacToeConsole {
         int linesIndexBy10 = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 18; j++) {
-                System.out.print(lines[j].substring(linesIndexBy10, linesIndexBy10 + 30));
+                System.out.print(lines[j].substring(linesIndexBy10, linesIndexBy10 + 10));
                 
             }
             System.out.println();
-            linesIndexBy10 += 30;
+            linesIndexBy10 += 10;
         }
     }
 
@@ -94,3 +98,5 @@ public class TicTacToeConsole {
 // ||----w |
 // || ||
 // ```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
