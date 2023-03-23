@@ -15,13 +15,15 @@ public class TicTacToeBoard {
         return board[x][y];
     }
 
-    public boolean placePiece(int xPos, int yPos) {
+    public boolean placePiece(int xPos, int yPos, int playerNum) {
         int x = xPos;
         int y = yPos;
+        int player = playerNum;
 
-        if (aValidMove(x, y) == true)
+        if (aValidMove(x,y)) {
+            board[x][y] = player;
             return true;
-        
+        }
         return false;
     }
 
