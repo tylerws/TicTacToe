@@ -70,10 +70,10 @@ public class TicTacToeConsole {
         for (int j = 0; j < 54; j += 1) {
             System.out.println(lines[j] + lines[j + 6] + lines[j + 12]);
             if (j == 5) {
-                j = 18;
+                j = 17;
             }
             if (j == 23){
-                j = 36;
+                j = 35;
             }
             if (j== 41){
                 break;
@@ -81,7 +81,15 @@ public class TicTacToeConsole {
         }
 
     }
-
+    // ________________________________________
+    // / You have Egyptian flu: you're going to \
+    // \ be a mummy.                            /
+    //  ----------------------------------------
+    //         \   ^__^
+    //          \  (oo)\_______
+    //             (__)\       )\/\
+    //                 ||----w |
+    //                 ||     ||
     public static void main(String[] args) {
         TicTacToeBoard board1 = new TicTacToeBoard();
         TicTacToeConsole game1 = new TicTacToeConsole(board1);
@@ -106,7 +114,15 @@ public class TicTacToeConsole {
                 if (board1.placePiece(row, col, turn)){
                     turn = 2;
                 }else {
-                    System.out.println("invalid move try again");
+                    System.out.println("________________________________________");
+                    System.out.println("/          invalid input                \\");
+                    System.out.println("\\                                       /");
+                    System.out.println(" ----------------------------------------");
+                    System.out.println("        \\   ^__^");
+                    System.out.println("         \\  (oo)\\_______");
+                    System.out.println("            (__)\\       )\\/\\");
+                    System.out.println("                ||----w |");
+                    System.out.println("                ||     ||");
                     continue;
                 }
             }else if (turn == 2){
@@ -120,7 +136,15 @@ public class TicTacToeConsole {
                 if (board1.placePiece(row, col, turn)){
                     turn = 1;
                 }else {
-                    System.out.println("invalid move try again");
+                    System.out.println("________________________________________");
+                    System.out.println("/          invalid input                \\");
+                    System.out.println("\\                                       /");
+                    System.out.println(" ----------------------------------------");
+                    System.out.println("        \\   ^__^");
+                    System.out.println("         \\  (oo)\\_______");
+                    System.out.println("            (__)\\       )\\/\\");
+                    System.out.println("                ||----w |");
+                    System.out.println("                ||     ||");
                     continue;
                 }
             }
@@ -128,15 +152,39 @@ public class TicTacToeConsole {
             int status = board1.getGameStatus();
             if (status == 1){
                 game1.printBoard(board1);
-                System.out.println("Player1 wins");
+                System.out.println("________________________________________");
+                System.out.println("/          Player1 wins!                \\");
+                System.out.println("\\                                       /");
+                System.out.println(" ----------------------------------------");
+                System.out.println("        \\   ^__^");
+                System.out.println("         \\  (oo)\\_______");
+                System.out.println("            (__)\\       )\\/\\");
+                System.out.println("                ||----w |");
+                System.out.println("                ||     ||");
                 game = false;
             } else if (status == 2){
                 game1.printBoard(board1);
-                System.out.println("Player2 wins");
+                System.out.println("________________________________________");
+                System.out.println("/          Player2 wins!                \\");
+                System.out.println("\\                                       /");
+                System.out.println(" ----------------------------------------");
+                System.out.println("        \\   ^__^");
+                System.out.println("         \\  (oo)\\_______");
+                System.out.println("            (__)\\       )\\/\\");
+                System.out.println("                ||----w |");
+                System.out.println("                ||     ||");
                 game = false;
             } else if (status == -1){
                 game1.printBoard(board1);
-                System.out.println("tie");
+                System.out.println("________________________________________");
+                System.out.println("/                  tie                  \\");
+                System.out.println("\\                                       /");
+                System.out.println(" ----------------------------------------");
+                System.out.println("        \\   ^__^");
+                System.out.println("         \\  (oo)\\_______");
+                System.out.println("            (__)\\       )\\/\\");
+                System.out.println("                ||----w |");
+                System.out.println("                ||     ||");
                 game = false;
             } else{
                 game1.printBoard(board1);
