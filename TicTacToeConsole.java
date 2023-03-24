@@ -86,10 +86,10 @@ public class TicTacToeConsole {
         TicTacToeBoard board1 = new TicTacToeBoard();
         TicTacToeConsole game1 = new TicTacToeConsole(board1);
         printTitle();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("________________________________________");
+        System.out.println("________________________________________");
+        System.out.println("________________________________________");
+        System.out.println("________________________________________");
 
         Scanner sc = new Scanner(System.in);
         boolean game = true;
