@@ -14,7 +14,6 @@ public class TicTacToeBoard {
     public int getCellContents(int x, int y) {
         return board[x][y];
     }
-
     public boolean placePiece(int xPos, int yPos, int playerNum) {
         int x = xPos;
         int y = yPos;
@@ -66,7 +65,7 @@ public class TicTacToeBoard {
                 || board[1][0] == 0 || board[1][1] == 0 || board[1][2] == 0
                 || board[2][0] == 0 || board[2][1] == 0 || board[2][2] == 0) {
             return 0;
-        } else {
+        }else {
             return -1;
         }
     }

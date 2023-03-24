@@ -16,6 +16,26 @@ public class TicTacToeConsole {
         System.out.println(" \\__|_|\\___|\\__\\__,_|\\___|\\__\\___/ \\___|");
     }
 
+    public static void printEasterEgg(){                                                                                                        
+        System.out.println("        GGGGGGGGGGGGGUUUUUUUU     UUUUUUUUIIIIIIIIII '::::'                                                                             kkkkkkkk            !!!  !!! ");
+        System.out.println("     GGG::::::::::::GU::::::U     U::::::UI::::::::I '::::'                                                                             k::::::k           !!:!!!!:!!");
+        System.out.println("   GG:::::::::::::::GU::::::U     U::::::UI::::::::I ':::''                                                                             k::::::k           !:::!!:::!");
+        System.out.println("  G:::::GGGGGGGG::::GUU:::::U     U:::::UUII::::::II':::'                                                                               k::::::k           !:::!!:::!");
+        System.out.println(" G:::::G       GGGGGG U:::::U     U:::::U   I::::I  ''''       ssssssssss            ssssssssss   uuuuuu    uuuuuu      cccccccccccccccc k:::::k    kkkkkkk!:::!!:::!");
+        System.out.println("G:::::G               U:::::D     D:::::U   I::::I           ss::::::::::s         ss::::::::::s  u::::u    u::::u    cc:::::::::::::::c k:::::k   k:::::k !:::!!:::!");
+        System.out.println("G:::::G               U:::::D     D:::::U   I::::I         ss:::::::::::::s      ss:::::::::::::s u::::u    u::::u   c:::::::::::::::::c k:::::k  k:::::k  !:::!!:::!");
+        System.out.println("G:::::G    GGGGGGGGGG U:::::D     D:::::U   I::::I         s::::::ssss:::::s     s::::::ssss:::::su::::u    u::::u  c:::::::cccccc:::::c k:::::k k:::::k   !:::!!:::!");
+        System.out.println("G:::::G    G::::::::G U:::::D     D:::::U   I::::I          s:::::s  ssssss       s:::::s  ssssss u::::u    u::::u  c::::::c     ccccccc k::::::k:::::k    !:::!!:::!");
+        System.out.println("G:::::G    GGGGG::::G U:::::D     D:::::U   I::::I            s::::::s              s::::::s      u::::u    u::::u  c:::::c              k:::::::::::k     !:::!!:::!");
+        System.out.println("G:::::G        G::::G U:::::D     D:::::U   I::::I               s::::::s              s::::::s   u::::u    u::::u  c:::::c              k:::::::::::k     !!:!!!!:!!");
+        System.out.println(" G:::::G       G::::G U::::::U   U::::::U   I::::I         ssssss   s:::::s      ssssss   s:::::s u:::::uuuu:::::u  c::::::c     ccccccc k::::::k:::::k     !!!  !!! ");
+        System.out.println("  G:::::GGGGGGGG::::G U:::::::UUU:::::::U II::::::II       s:::::ssss::::::s     s:::::ssss::::::su:::::::::::::::uuc:::::::cccccc:::::ck::::::k k:::::k             ");
+        System.out.println("   GG:::::::::::::::G  UU:::::::::::::UU  I::::::::I       s::::::::::::::s      s::::::::::::::s  u:::::::::::::::u c:::::::::::::::::ck::::::k  k:::::k   !!!  !!! ");
+        System.out.println("     GGG::::::GGG:::G    UU:::::::::UU    I::::::::I        s:::::::::::ss        s:::::::::::ss    uu::::::::uu:::u  cc:::::::::::::::ck::::::k   k:::::k !!:!!!!:!!");
+        System.out.println("        GGGGGG   GGGG      UUUUUUUUU      IIIIIIIIII         sssssssssss           sssssssssss        uuuuuuuu  uuuu    cccccccccccccccckkkkkkkk    kkkkkkk !!!  !!! ");
+
+    }
+
     private static String printed0() {
         return "   ____   " + " ,' __ `. " + "/ ,'  `. \\" + "| | () | |" + "\\ `.__,' /" + " `.____,' ";
     }
@@ -148,8 +168,8 @@ public class TicTacToeConsole {
                     continue;
                 }
             }
-            // 1= p1 win, 2 = p2 win, 0 = in proggers, -1 = tie
             int status = board1.getGameStatus();
+
             if (status == 1){
                 game1.printBoard(board1);
                 System.out.println("________________________________________");
