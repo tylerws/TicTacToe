@@ -1,8 +1,10 @@
-public class TicTacToeConsole {
-    private TicTacToeBoard board;
+import java.util.Scanner;
 
-    TicTacToeConsole(TicTacToeBoard board) {
-        this.board = board;
+public class TicTacToeConsole {
+    private TicTacToeBoard theBoard;
+
+    TicTacToeConsole(TicTacToeBoard theBoard) {
+        this.theBoard = theBoard;
     }
 
     public static void printTitle() {
@@ -14,23 +16,23 @@ public class TicTacToeConsole {
         System.out.println(" \\__|_|\\___|\\__\\__,_|\\___|\\__\\___/ \\___|");
     }
 
-    public static String printY() {
-        return "   ____" + "\n" + " ,' __ `." + "\n" + "/ ,'  `. \\" + "\n" + "| | () | |" + "\n" + "\\ `.__,' /" + "\n"
-                + " `.____,'";
+    private static String printed0() {
+        return "   ____   " + " ,' __ `. " + "/ ,'  `. \\" + "| | () | |" + "\\ `.__,' /" + " `.____,' ";
     }
 
-    public static String printX() {
-        return " .____, " + "\n" + ". \\  / ," + "\n" + "|`-  -'|" + "\n" + "|,-  -.|" + "\n" + "' /__\\ `" + "\n"
-                + " '    ` ";
+
+
+    private static String printedX() {
+        return "  .____,  " + " . \\  / , " + " |`-  -'| " + " |,-  -.| " + " ' /__\\ ` " + "  '    `  ";
     }
 
-    public static String printBlank(){
-        return "--------" + "\n" + "--------" + "\n" + "--------" + "\n" + "--------" + "\n" + "--------" + "\n" + "--------" + "\n" + "--------" + "\n";
+    private static String printedBlank() {
+        return "------------------------------------------------------------";
     }
 
     // 1 = player1 win, 2 = player2 win, 0 = in progress, -1 = tie
-    public String printWinner() {
-        int status = board.getGameStatus();
+    public String getWinner() {
+        int status = theBoard.getGameStatus();
         if (status == 1) {
             return "PlayerOne wins";
         } else if (status == 2) {
@@ -41,46 +43,76 @@ public class TicTacToeConsole {
         return "Tie";
     }
 
-    public String printBoard() {
+    public void printBoard(TicTacToeBoard board) {
+        
+
         String sol = "";
-        int count=0;
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
-            if (board.board[r][c] == 1){
-                sol += printX();
-                count++;
-            } else if (board.board[r][c] == 2){
-                sol += printY();
-                count++;
-            } else {
-                sol += printBlank();
-                count++;
-            }
-            if (count == 3){
-                sol += "\n";
-                count = 0;
-            }
+                if (theBoard.getCellContents(r, c) == 0) {
+                    sol += printedBlank();
+                } else if (theBoard.getCellContents(r, c) == 1) {
+                    sol += printedX();
+                } else if (theBoard.getCellContents(r, c) == 2) {
+                    sol += printed0();
+                }
             }
         }
-        return sol;
+        String[] lines = new String[54];
+        int lineIndexBy10 = 0;
+        for (int i = 0; i < 54; i++) {
+            lines[i] = sol.substring(lineIndexBy10, lineIndexBy10 + 10);
+            lineIndexBy10 += 10;
+        }
+        
+
+        
+        for (int j = 0; j < 54; j += 1) {
+            System.out.println(lines[j] + lines[j + 6] + lines[j + 12]);
+            if (j == 5) {
+                j = 18;
+            }
+            if (j == 23){
+                j = 36;
+            }
+            if (j== 41){
+                break;
+            }
+        }
+
     }
 
     public static void main(String[] args) {
-        TicTacToeBoard b1 = new TicTacToeBoard();
-        TicTacToeConsole c1 = new TicTacToeConsole(b1);
-        b1.placePiece(0, 0, 1);
-        System.out.println(c1.printBoard());
-        
+        TicTacToeBoard board1 = new TicTacToeBoard();
+        TicTacToeConsole game1 = new TicTacToeConsole(board1);
+        Scanner sc = new Scanner(System.in);
+        boolean game = true;
+        int turn = 1;
+        while (game){
+            game1.printBoard(board1);
+            if (turn == 1){
+                int row;
+                int col;
+                System.out.println("Input row");
+                row = sc.nextInt();
+                System.out.println("INput column");
+                col = sc.nextInt();
+                board1.placePiece(row, col, turn);
+            }else if (turn == 2){
+                int row;
+                int col;
+                System.out.println("Input row");
+                row = sc.nextInt();
+                System.out.println("INput column");
+                col = sc.nextInt();
+                board1.placePiece(row, col, turn);
+            }
+            // 1= p1 win, 2 = p2 win, 0 = in proggers, -1 = tie
+            int status = board1.getGameStatus();
+        }
+
+
+
+
     }
 }
-
-// ```
-// ______________________________
-// < Available on Maven Central! >
-// ------------------------------
-// \ ^__^
-// \ (oo)\_______
-// (__)\ )\/\
-// ||----w |
-// || ||
-// ```
