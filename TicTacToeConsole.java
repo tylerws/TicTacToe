@@ -122,7 +122,9 @@ public class TicTacToeConsole {
         Scanner sc = new Scanner(System.in);
         boolean game = true;
         int turn = 1;
+        int invalidCount = 0;
         while (game){
+
             if (turn == 1){
                 int row;
                 int col;
@@ -134,6 +136,7 @@ public class TicTacToeConsole {
                 if (board1.placePiece(row, col, turn)){
                     turn = 2;
                 }else {
+                    invalidCount++;
                     System.out.println("________________________________________");
                     System.out.println("/          invalid input                \\");
                     System.out.println("\\                                       /");
@@ -143,6 +146,10 @@ public class TicTacToeConsole {
                     System.out.println("            (__)\\       )\\/\\");
                     System.out.println("                ||----w |");
                     System.out.println("                ||     ||");
+                    if (invalidCount == 5){
+                        printEasterEgg();
+                        game = false;
+                    }
                     continue;
                 }
             }else if (turn == 2){
@@ -165,6 +172,10 @@ public class TicTacToeConsole {
                     System.out.println("            (__)\\       )\\/\\");
                     System.out.println("                ||----w |");
                     System.out.println("                ||     ||");
+                    if (invalidCount == 5){
+                        printEasterEgg();
+                        game = false;
+                    }
                     continue;
                 }
             }
@@ -209,7 +220,9 @@ public class TicTacToeConsole {
             } else{
                 game1.printBoard(board1);
             }
+            invalidCount = 0;
         }
+        
 
 
 
