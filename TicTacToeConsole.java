@@ -85,30 +85,62 @@ public class TicTacToeConsole {
     public static void main(String[] args) {
         TicTacToeBoard board1 = new TicTacToeBoard();
         TicTacToeConsole game1 = new TicTacToeConsole(board1);
+        printTitle();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
         Scanner sc = new Scanner(System.in);
         boolean game = true;
         int turn = 1;
         while (game){
-            game1.printBoard(board1);
             if (turn == 1){
                 int row;
                 int col;
-                System.out.println("Input row");
+                System.out.println("Player1");
+                System.out.print("Input row: ");
                 row = sc.nextInt();
-                System.out.println("INput column");
+                System.out.print("Input column: ");
                 col = sc.nextInt();
-                board1.placePiece(row, col, turn);
+                if (board1.placePiece(row, col, turn)){
+                    turn = 2;
+                }else {
+                    System.out.println("invalid move try again");
+                    continue;
+                }
             }else if (turn == 2){
                 int row;
                 int col;
-                System.out.println("Input row");
+                System.out.println("Player2");
+                System.out.print("Input row:");
                 row = sc.nextInt();
-                System.out.println("INput column");
+                System.out.print("Input column:");
                 col = sc.nextInt();
-                board1.placePiece(row, col, turn);
+                if (board1.placePiece(row, col, turn)){
+                    turn = 1;
+                }else {
+                    System.out.println("invalid move try again");
+                    continue;
+                }
             }
             // 1= p1 win, 2 = p2 win, 0 = in proggers, -1 = tie
             int status = board1.getGameStatus();
+            if (status == 1){
+                game1.printBoard(board1);
+                System.out.println("Player1 wins");
+                game = false;
+            } else if (status == 2){
+                game1.printBoard(board1);
+                System.out.println("Player2 wins");
+                game = false;
+            } else if (status == -1){
+                game1.printBoard(board1);
+                System.out.println("tie");
+                game = false;
+            } else{
+                game1.printBoard(board1);
+            }
         }
 
 
