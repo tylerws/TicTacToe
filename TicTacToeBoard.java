@@ -2,11 +2,11 @@ public class TicTacToeBoard {
     public int[][] board = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
     private boolean aValidMove(int x, int y, int playerNum) {
-        if (board[x][y] != 0) {
+        if (x > 2 || y > 2) {
             return false;
-        } else if (playerNum != 1 && playerNum != 2 && playerNum != 0) {
+        }else if (board[x][y] != 0) {
             return false;
-        } else {
+        }  else {
             return true;
         }
     }
