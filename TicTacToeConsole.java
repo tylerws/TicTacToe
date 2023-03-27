@@ -131,7 +131,7 @@ public class TicTacToeConsole {
                 row = sc.nextInt();
                 System.out.print("Input column: ");
                 col = sc.nextInt();
-                if (row == 3 && col == 3){
+                if (row == 5 && col == 5){
                     printEasterEgg();
                 }
                 if (board1.placePiece(row, col, turn)){
