@@ -101,15 +101,25 @@ public class TicTacToeConsole {
         }
 
     }
-    // ________________________________________
-    // / You have Egyptian flu: you're going to \
-    // \ be a mummy.                            /
-    //  ----------------------------------------
-    //         \   ^__^
-    //          \  (oo)\_______
-    //             (__)\       )\/\
-    //                 ||----w |
-    //                 ||     ||
+    // ___________________
+    // / You're going to \
+    // \ be a mummy.     /
+    //  -----------------
+    //        \  _^_^_^_
+    //         \ (  o  )
+    //          \ (o o)\__|_|_|_|__
+    //            (___)\          )\/\/\/\/\/\/\/\/\/\/\/\/
+    //                 | |-------W |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
+    //                 | |       | |
     public static void main(String[] args) {
         TicTacToeBoard board1 = new TicTacToeBoard();
         TicTacToeConsole game1 = new TicTacToeConsole(board1);
